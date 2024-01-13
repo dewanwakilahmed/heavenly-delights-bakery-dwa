@@ -1,8 +1,10 @@
-/*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu');
 const navToggle = document.getElementById('nav-toggle');
 const navClose = document.getElementById('nav-close');
 
+const header = document.getElementById('header');
+
+/*=============== SHOW MENU ===============*/
 /* show menu */
 if (navToggle) {
   navToggle.addEventListener('click', () => {
@@ -27,6 +29,13 @@ const linkAction = () => {
 navLink.forEach((n) => n.addEventListener('click', linkAction));
 
 /*=============== ADD BLUR HEADER ===============*/
+const blurHeader = () => {
+  this.scrollY >= 50
+    ? header.classList.add('blur-header')
+    : header.classList.remove('blur-header');
+};
+
+window.addEventListener('scroll', blurHeader);
 
 /*=============== SHOW SCROLL UP ===============*/
 
