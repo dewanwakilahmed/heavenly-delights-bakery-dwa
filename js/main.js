@@ -1,6 +1,7 @@
 const navMenu = document.getElementById('nav-menu');
 const navToggle = document.getElementById('nav-toggle');
 const navClose = document.getElementById('nav-close');
+const scrollUp = document.getElementById('scrollup');
 
 const header = document.getElementById('header');
 
@@ -38,6 +39,13 @@ const blurHeader = () => {
 window.addEventListener('scroll', blurHeader);
 
 /*=============== SHOW SCROLL UP ===============*/
+const showScrollUp = () => {
+  this.scrollY >= 350
+    ? scrollUp.classList.add('show-scroll')
+    : scrollUp.classList.remove('show-scroll');
+};
+
+window.addEventListener('scroll', showScrollUp);
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
